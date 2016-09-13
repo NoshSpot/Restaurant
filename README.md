@@ -1,6 +1,6 @@
 # NoshSpot - Restaurant
 
-## Group project to make a restaurant ordering app for diners and restauranteurs.
+## Restaurant admin to view orders and change menu items/prices
 
 ### Technology Used:
 - AngularJS
