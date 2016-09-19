@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <title>NoshSpot | Restaurant</title>
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+    <link rel="stylesheet" href="bower_components/bulma/css/bulma.css" />
     <!-- endbower -->
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <!-- inject:css -->
+    <link rel="stylesheet" href="css/custom.css">
     <!-- endinject -->
 </head>
 
@@ -17,8 +20,27 @@
         <div ui-view></div>
     </main>
     <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- inject:js -->
+    <script src="js/app.module.js"></script>
+    <script src="js/core/category.factory.js"></script>
+    <script src="js/core/crud.factory.js"></script>
+    <script src="js/core/customer.factory.js"></script>
+    <script src="js/core/menuGroup.factory.js"></script>
+    <script src="js/core/menuItem.factory.js"></script>
+    <script src="js/core/order.factory.js"></script>
+    <script src="js/core/orderItem.factory.js"></script>
+    <script src="js/core/payment.factory.js"></script>
+    <script src="js/core/restaurant.factory.js"></script>
+    <script src="js/core/review.factory.js"></script>
+    <script src="js/details/details.controller.js"></script>
+    <script src="js/login/login.controller.js"></script>
+    <script src="js/menu/menu.controller.js"></script>
+    <script src="js/orders/orders.controller.js"></script>
+    <script src="js/reviews/reviews.controller.js"></script>
     <!-- endinject -->
 </body>
 
