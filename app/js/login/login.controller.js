@@ -5,18 +5,26 @@
         .module('app')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = [];
+    LoginController.$inject = ['$state', '$stateParams'];
 
     /* @ngInject */
-    function LoginController() {
+    function LoginController($state, $stateParams) {
         var vm = this;
         vm.title = 'LoginController';
-
-        activate();
+        vm.loginInfo = {};
+        vm.loginRestaurant = loginRestaurant;
+        
 
         ////////////////
 
-        function activate() {
+        function loginRestaurant() {
+        	if (vm.loginInfo.password != 'butts') {
+        		alert('the password is butts');
+        	}
+        	else
+        	{
+        		$state.go();
+        	}
         }
     }
 })();
