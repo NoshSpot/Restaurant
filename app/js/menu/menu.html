@@ -1,0 +1,27 @@
+<h1>Menu</h1>
+<div ng-repeat='menuGroup in restaurantMenu.menu'>
+	<h1>{{menuGroup.MenuGroupTitle}}</h1>
+	<table>
+		<thead>
+			<tr>
+				<td>Name</td>
+				<td>Description</td>
+				<td>Price</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat='item in menuGroup.menuItems'>
+				<td>{{item.name}}</td>
+				<td>{{item.description}}</td>
+				<td>{{item.price}}</td>
+				<td><button ng-click = "restaurantMenu.deleteMenuItem(item)">Delete Item</button></td>
+			</tr>
+			<tr>
+				<td><input type = "text" ng-model = "menuGroup.newMenuItem.name"/></td>
+				<td><input type = "text" ng-model = "menuGroup.newMenuItem.description"/></td>
+				<td><input type = "text" ng-model = "menuGroup.newMenuItem.price"/></td>
+				<td><button ng-click = "restaurantMenu.addMenuItem(menuGroup.newMenuItem, menuGroup.menuGroupId)">Add Item</button></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
