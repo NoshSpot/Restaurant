@@ -10,8 +10,7 @@
 
     function appConfig($urlRouterProvider, $stateProvider) {
 
-    	/// CHANGE THIS ////
-    	$urlRouterProvider.otherwise('/restaurant/detail/tabs/menu?restaurantId=12');
+    	$urlRouterProvider.otherwise('/login');
 
 /*************LOGIN STATE**************************************************************/
     	$stateProvider

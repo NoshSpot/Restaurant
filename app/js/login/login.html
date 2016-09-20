@@ -1,9 +1,13 @@
-<form ng-submit="login.loginRestaurant(login.loginInfo)">
-	<p class="control has-icon">
-		<!-- <label>Email</label> -->
-		<input  class="input" type="email" placeholder="Email" ng-model="login.loginInfo.email">
-		<i class="fa fa-envelope"></i>
-	</p>
+<form ng-submit="login.loginRestaurant()">
+	<div class="control">
+		<!-- a replacement for oauth -->
+		<div class="select is-fullwidth">
+			<select ng-model="login.selectedRestaurant" ng-options="restaurant.restaurantId as restaurant.name for restaurant in login.restaurants">
+				<option value="" disabled>Select a restaurant...</option>
+			</select>
+		</div>
+	</div>
+
 	<p class="control has-icon">
 		<!-- <label>Password</label> -->
 		<input class="input" type="password" placeholder="Password" ng-model="login.loginInfo.password">
