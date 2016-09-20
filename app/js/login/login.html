@@ -1,0 +1,15 @@
+<form ng-submit="login.loginRestaurant(login.loginInfo)">
+	<p class="control has-icon">
+		<!-- <label>Email</label> -->
+		<input  class="input" type="email" placeholder="Email" ng-model="login.loginInfo.email">
+		<i class="fa fa-envelope"></i>
+	</p>
+	<p class="control has-icon">
+		<!-- <label>Password</label> -->
+		<input class="input" type="password" placeholder="Password" ng-model="login.loginInfo.password">
+		<i class="fa fa-lock"></i>
+	</p>
+	<p class="control">
+		<button type="submit" class="button is-success">Login</button>
+	</p>
+</form>
