@@ -5,25 +5,32 @@
         .module('app')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$state', '$stateParams'];
+    LoginController.$inject = ['RestaurantFactory', '$state', '$stateParams'];
 
     /* @ngInject */
-    function LoginController($state, $stateParams) {
+    function LoginController(RestaurantFactory, $state, $stateParams) {
         var vm = this;
         vm.title = 'LoginController';
         vm.loginInfo = {};
         vm.loginRestaurant = loginRestaurant;
         
-
+        ////////////////
+        activate();
         ////////////////
 
+        function activate() {
+            RestaurantFactory.getAll().then(function(data) {
+                vm.restaurants = data;
+            });
+        }
+
         function loginRestaurant() {
-        	if (vm.loginInfo.password != 'butts') {
-        		alert('the password is butts');
+        	if (vm.loginInfo.password != 'butts' || vm.selectedRestaurant === undefined) {
+        		alert('the password is butts, make sure you select a restaurant also');
         	}
         	else
         	{
-        		$state.go();
+        		$state.go("restaurant.detail", {"restaurantId": vm.selectedRestaurant});
         	}
         }
     }
