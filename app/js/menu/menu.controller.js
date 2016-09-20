@@ -11,11 +11,12 @@
         var vm = this;
 
         vm.menu = [];
+        vm.category = [];
         vm.deleteMenuItem = deleteMenuItem;
         vm.addMenuItem = addMenuItem;
         getMenu();
 
-/******* GET ALL ITEMS ON THE MENU ***************************************************************************************/
+/******* GET ALL ITEMS ON THE MENU ********************************************************************************/
         function getMenu(){
         	RestaurantFactory.getById($stateParams.restaurantId).then(
         		function(response){
@@ -24,7 +25,7 @@
         		}
         	);
         }
-/******** DELETE AN ITEM **************************************************************************************/
+/******** DELETE AN ITEM ******************************************************************************************/
         function deleteMenuItem(menuItem){
         	if(confirm("Are you sure you want to remove this item?")){
 	        	MenuItemFactory.remove(menuItem.menuItemId).then(
@@ -35,7 +36,7 @@
 	        	);	
         	}
         }
-/********** ADD AN ITEM ************************************************************************************/
+/********** ADD AN ITEM ******************************************************************************************/
         function addMenuItem(newMenuItem, menuGroupId){
         	newMenuItem.menuGroupId = menuGroupId;
         	MenuItemFactory.add(newMenuItem).then(
@@ -45,7 +46,7 @@
         		}
         	);
         }
-        
+
     }
 })();
 
