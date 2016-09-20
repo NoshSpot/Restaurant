@@ -1,0 +1,23 @@
+<div class="container">
+  <table>
+      <thead>
+          <tr>
+            <th>Customer</th>
+            <th>Rating</th>
+            <th>Review</th>
+            <th width="1%"></th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr ng-repeat="review in restaurantReviews.reviews">
+              <td>{{review.customer.firstName}} {{review.customer.lastName}}</td>
+              <td>{{review.rating}}</td>
+              <td>{{review.reviewDescription}}</td>
+
+              <td><a class="button is-danger" 
+                     ng-click="restaurantDetailReviews.removeReview(review)">
+                  Delete</a></td>
+          </tr>
+      </tbody>
+  </table>
+</div>
