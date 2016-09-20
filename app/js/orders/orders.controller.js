@@ -3,12 +3,12 @@
 
     angular
         .module('app')
-        .controller('OrdersController', OrdersController);
+        .controller('RestaurantOrdersController', RestaurantOrdersController);
 
-    OrdersController.$inject = [];
+    RestaurantOrdersController.$inject = [];
 
     /* @ngInject */
-    function OrdersController() {
+    function RestaurantOrdersController() {
         var vm = this;
         
     }
