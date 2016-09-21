@@ -13,7 +13,7 @@
         vm.title = 'LoginController';
         vm.loginInfo = {};
         vm.loginRestaurant = loginRestaurant;
-        
+
         ////////////////
         activate();
         ////////////////
@@ -22,10 +22,12 @@
             RestaurantFactory.getAll().then(function(data) {
                 vm.restaurants = data;
             });
+
+            vm.selectedRestaurant = null;
         }
 
         function loginRestaurant() {
-        	if (vm.loginInfo.password != 'butts' || vm.selectedRestaurant === undefined) {
+        	if (vm.loginInfo.password != 'butts' || vm.selectedRestaurant === null) {
         		alert('the password is butts, make sure you select a restaurant also');
         	}
         	else
