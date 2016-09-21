@@ -5,20 +5,21 @@
         .module('app')
         .controller('RestaurantReviewsController', RestaurantReviewsController);
 
-    RestaurantReviewsController.$inject = ['ReviewFactory', '$stateParams'];
+    RestaurantReviewsController.$inject = ['RestaurantFactory', '$stateParams'];
 
     /* @ngInject */
-    function RestaurantReviewsController(ReviewFactory, $stateParams) {
+    function RestaurantReviewsController(RestaurantFactory, $stateParams) {
         var vm = this;
-        
+        vm.reviews = [];
         ////////////////
         activate();
         ////////////////
 
         function activate() {
-            ReviewFactory.getAll().then(
+            RestaurantFactory.getById($stateParams.restaurantId).then(
                 function(data) {
                     vm.reviews = data;
+                    console.log(vm.reviews);
                 }
             );
         }

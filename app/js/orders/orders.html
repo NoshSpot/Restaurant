@@ -7,15 +7,15 @@
     	</tr>
     </thead>
     <tbody>
-        <tr ng-repeat="food in restaurantDetail.details.orders">
+        <tr ng-repeat="food in restaurantOrders.details.orders">
             <td>
                 {{food.customer.firstName}} {{food.customer.lastName}}
             </td>
             <td>
-                {{food.orderItems.length}}
+                {{food.numItemsOrdered}}
             </td>
             <td>
-                {{ restaurantDetailOrders.getTotal(food) }}
+                {{ food.totalPrice | currency}}
             </td>
         </tr>
     </tbody>

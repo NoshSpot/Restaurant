@@ -40,7 +40,8 @@
 
         function save() {
             if ($stateParams.restaurantId) {
-                RestaurantFactory.update(vm.restaurants, vm.restaurants.restaurantId).then(
+                vm.restaurants.restaurantId = $stateParams.restaurantId;
+                RestaurantFactory.update(vm.restaurants, $stateParams.restaurantId).then(
                     function() {
                         alert("Update was successful!")
                     }

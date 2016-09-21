@@ -19,6 +19,7 @@
         		RestaurantFactory.getById($stateParams.restaurantId).then(
         			function(data) {
         				vm.details = data;
+                        console.log(vm.details);
         			}
         		);
         	}
