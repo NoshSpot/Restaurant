@@ -32,7 +32,7 @@
         	}
         	else
         	{
-        		$state.go("restaurant.detail", {"restaurantId": vm.selectedRestaurant});
+        		$state.go("restaurant.detail.tabs.menu", {"restaurantId": vm.selectedRestaurant});
         	}
         }
     }
