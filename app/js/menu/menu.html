@@ -7,6 +7,7 @@
 			<div ng-repeat='menuGroup in restaurantMenu.menu'>
 		<!-- Make sure that the H1 tag with menu group title is centered and clearly visible -->
 				<h1 class="header menu-group-header">{{menuGroup.menuGroupTitle}}</h1>
+				<div class="container">
 				<table class="table menu-table">
 					<thead>
 						<tr>
@@ -25,13 +26,23 @@
 							<td><button class="button delete-menu-item-btn" ng-click = "restaurantMenu.deleteMenuItem(item)">Delete Item<i class="icons fa fa-trash-o"></i></button></td>
 						</tr>
 						<tr>
-							<td><input type = "text" ng-model = "menuGroup.newMenuItem.name"/></td>
-							<td><input type = "text" ng-model = "menuGroup.newMenuItem.description"/></td>
-							<td><input type = "text" ng-model = "menuGroup.newMenuItem.price"/></td>
-							<td><button class="button add-menu-item-btn" ng-click = "restaurantMenu.addMenuItem(menuGroup.newMenuItem, menuGroup.menuGroupId)">Add Item <i class="icons fa fa-plus"></i></button></td>
+							<td>
+								<input type = "text" ng-model = "menuGroup.newMenuItem.name"/>
+							</td>
+							<td>
+								<input type = "text" ng-model = "menuGroup.newMenuItem.description"/>
+							</td>
+							<td>
+								<input type = "text" ng-model = "menuGroup.newMenuItem.price"/>
+							</td>
+							<td>
+								<button class="button add-menu-item-btn" ng-click = "restaurantMenu.addMenuItem(menuGroup.newMenuItem, menuGroup.menuGroupId)">Add Item <i class="icons fa fa-plus"></i>
+								</button>
+							</td>
 						</tr>
 					</tbody>
 				</table>
+				</div>
 			</div>
 
 </div>

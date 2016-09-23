@@ -51,6 +51,7 @@
     transform: translate(-50%, -80%);
   }
 }
+
 .modal-trigger-label {
   background: red;
   border-radius: 50%;
@@ -99,7 +100,7 @@
 }
 
 /****************************************************
-				NavBar Default
+				NavBar && Footer Default
 ****************************************************/
 .nav{
 	background-color: rgba(90, 111, 93, .8);
@@ -172,7 +173,7 @@ main {
 
 
 .lowerHeader {
-	margin-top: 250px;
+	margin-top: 12%;
 }
 
 #text1 {
@@ -270,7 +271,6 @@ main {
 }
 
 .add-menu-item-btn {
-	float: right;
 	color: #fff;
 	background-color: #697f7f;
 	border: none;
@@ -301,3 +301,22 @@ input {
     box-shadow: 0px 4px 4px #ccc; 
 }
 
+/****************************************************
+				Orders Default && MODAL
+****************************************************/
+
+.modal-lanuch {
+	color: #fff;
+	background-color: #EBAA32;
+	font-weight: bold;
+	border-radius: 90%;
+}
+
+.order-display {
+	box-shadow: -3px 8px 20px #000;
+}
+
+.totalPriceDisplay {
+	color: green;
+	font-weight: bold;
+}

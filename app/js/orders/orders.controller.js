@@ -5,13 +5,15 @@
         .module('app')
         .controller('RestaurantOrdersController', RestaurantOrdersController);
 
-    RestaurantOrdersController.$inject = ['$state', '$stateParams', 'RestaurantFactory'];
+    RestaurantOrdersController.$inject = ['$state', '$stateParams', 'RestaurantFactory', 'OrderFactory'];
 
     /* @ngInject */
-    function RestaurantOrdersController($state, $stateParams, RestaurantFactory) {
+    function RestaurantOrdersController($state, $stateParams, RestaurantFactory, OrderFactory) {
         var vm = this;
         
         vm.getTotal = getTotal;
+        vm.getOrderById = getOrderById;
+
         activate();
 
         function activate() {
@@ -36,5 +38,18 @@
         		sum += food.orderItems[i].menuItem.price;
         	}
         }
+
+        function getOrderById(orderId, $index) {
+            OrderFactory.getById(orderId).then(
+                function(data) {
+                        vm.orders = data;
+                        vm.orders.totalPrice = vm.details.orders[$index].totalPrice;
+                        console.log(vm.orders);
+                    
+                }
+            );
+            
+            
+        } 
     }
 })();
