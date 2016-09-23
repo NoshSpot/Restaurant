@@ -1,16 +1,20 @@
 <div class="container">
-  <table>
+  <table class="table">
+    <div class="container">
       <thead>
           <tr>
             <th>Customer</th>
-            <th>Rating</th>
             <th>Review</th>
+            <th>Rating</th>
           </tr>
       </thead>
-      <tbody>
+      <tbody class="">
           <tr ng-repeat="review in restaurantReviews.reviews.reviews">
-              <td>{{review.reviewDescription}}</td><td>{{review.rating}}</td>  
+              <td class=" ">{{review.customer.firstName}}</td>
+              <td>{{review.reviewDescription}}</td>
+              <td>{{review.rating}}</td>  
           </tr>
       </tbody>
+    </div>
   </table>
 </div>
