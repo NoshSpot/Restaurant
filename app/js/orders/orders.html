@@ -42,7 +42,7 @@
             	</tr>
             </thead>
             <tbody>
-                <tr ng-repeat="food in restaurantOrders.details.orders">
+                <tr ng-repeat="food in restaurantOrders.details.orders | orderBy:'-timeStamp'">
                     <td>
                         {{food.customer.firstName}} {{food.customer.lastName}}
                     </td>
